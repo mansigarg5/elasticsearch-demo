@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Book</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{'/css/book.css'}" rel="stylesheet"/>
+</head>
+<body>
+
+<form action="/updateBook" method="post">
+    <div class="container">
+        <div class="topnav" style="margin-top: 20px;">
+            <a class="active" >Update Book</a>
+            <a href="/">Home</a>
+        </div>
+        <br>
+        <p>Please fill in the details to update the book.</p>
+        <hr>
+        <input type="hidden" name="id" id="id" required th:value="${book.id}">
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" name="name" id="name" required th:value="${book.name}">
+
+        <label for="authorName"><b>Author's Name</b></label>
+        <input type="text" name="authorName" id="authorName" required th:value="${book.authorName}">
+
+        <label for="genre"><b>Genre</b></label>
+        <input type="text" name="genre" id="genre" required th:value="${book.genre}">
+        <hr>
+
+        <button type="submit" class="registerbtn">Update</button>
+    </div>
+</form>
+<script th:src="@{'/javascripts/book.js'}"></script>
+</body>
+</html>

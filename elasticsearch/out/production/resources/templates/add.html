@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{'/css/book.css'}" rel="stylesheet"/>
+</head>
+<body>
+
+<form action="/save" method="post">
+    <div class="container">
+        <div class="topnav" style="margin-top: 20px;">
+            <a class="active" >Add Book</a>
+            <a href="/">Home</a>
+        </div>
+        <br>
+        <p>Please fill in the details to add a book.</p>
+        <hr>
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter name of the book" name="name" id="name" required>
+
+        <label for="authorName"><b>Author's Name</b></label>
+        <input type="text" placeholder="Enter name of the author" name="authorName" id="authorName" required>
+
+        <label for="genre"><b>Genre</b></label>
+        <input type="text" placeholder="Enter genre of the book" name="genre" id="genre" required>
+        <hr>
+
+        <button type="submit" class="registerbtn">Add</button>
+    </div>
+</form>
+<script th:src="@{'/javascripts/book.js'}"></script>
+</body>
+</html>
